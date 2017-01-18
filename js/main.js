@@ -63,7 +63,8 @@ $(function() {
 		}
 		console.log(day._d);
 
-
+		var ft_submission = day.format("DD/MM/YYYY");
+		$('.ft-submission').text(ft_submission);
 	}
 
 	$('button').on('click', update);
