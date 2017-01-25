@@ -25,35 +25,102 @@
 
 			p { margin-bottom: 0.5em; }
 
+			.block {
+				background-color: #f8f8f8;
+				padding: 2em;
+			}
+
+			.bold {
+				font-weight: bold;
+			}
+
 		</style>
 	</head>
 	<body>
 		<h1>MSc assessment date calculator</h1>
 		<hr>
-		<div class="row">
-			<div class="form column">
-
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+		<div class="row block">
+			<div class="column column-33">
 
 				<label for="week">Module week</label>
-				<input name="week" type="number" value="1">
+				<input name="week" type="number" value="4" min="4" max="42">
+
+				<p>Module starting date:</p>
+				<p class="bold"><span class="module-start"></span></p>
 
 			</div>
-
 			<div class="column">
 
-				<h2>Full time</h2>
-				<p>Submission: <span class="ft-submission"></span></p>
-				<p>Feedback: <span class="ft-feedback"></span></p>
+				<p>These dates only apply to 10-credit modules. The 40-credit and 60-credit modules have different arrangements.</p>
+				<p>Submission dates for assessed work should normally be 10:00 am on a Monday morning, unless holidays intervene.</p>
+				<p>Submission dates are five weeks after a module has finished for full-time students and eight weeks for flexible. Extra weeks are added for Christmas and Easter vacations.</p>
+				<p>Feedback dates are 15 working days after submission.</p>
 
-				<h2>Part time</h2>
-				<p>Submission: <span class="pt-submission"></span></p>
-				<p>Feedback: <span class="pt-feedback"></span></p>
+				<button type="button" class="float-right toggle button button-clear">Toggle debug</button>
+			</div>
+		</div>
 
-				<button type="button" name="update">Update</button>
+		<hr>
+
+		<div class="row">
+			<div class="column">
+
+				<table>
+					<thead>
+						<tr>
+							<th></th>
+							<th>Submission</th>
+							<th>Feedback</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>Full time</th>
+							<td><span class="ft-submission"></span></td>
+							<td><span class="ft-feedback"></span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<th>Part time</th>
+							<td><span class="pt-submission"></span></td>
+							<td><span class="pt-feedback"></span></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
 
 			</div>
 		</div>
+
+		<div class="row">
+			<div class="column">
+				<p>Please note that these dates are defaults for guidance only. For operational reasons, the actual dates may for submission and feedback may differ. Students are advised to check assignment briefs for actual submission and feedback dates.</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="column">
+
+				<div class="debug" style="display:none">
+					<h2>Full time submission <span class="ft-submission"></span></h2>
+					<div class="debug-ft-submission"><pre><code></code></pre></div>
+					<h2>Part time submission <span class="pt-submission"></span></h2>
+					<div class="debug-pt-submission"><pre><code></code></pre></div>
+					<h2>Full time feedback <span class="ft-feedback"></span></h2>
+					<div class="debug-ft-feedback"><pre><code></code></pre></div>
+					<h2>Part time feedback <span class="pt-feedback"></span></h2>
+					<div class="debug-pt-feedback"><pre><code></code></pre></div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="column">
+				<button type="button" name="update">Update</button>
+			</div>
+		</div>
+
 		<footer class="row">
 			<div class="column">
 				<hr>
@@ -66,6 +133,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.min.js" charset="utf-8"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js" charset="utf-8"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/locale/en-gb.js" charset="utf-8"></script>
+		<script src="js/makeDebug.js" charset="utf-8"></script>
 		<script src="js/loadDates.js" charset="utf-8"></script>
 		<script src="js/generateDateRange.js" charset="utf-8"></script>
 		<script src="js/addWorkingDay.js" charset="utf-8"></script>
