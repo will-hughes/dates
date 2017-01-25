@@ -2,8 +2,8 @@ $(function() {
 
 	var FULL_TIME_WORKING_DAYS = 30;
 	var PART_TIME_WORKING_DAYS = 45;
-	var INPUT_FORMAT = 'dddd Do MMMM YYYY';
-	var OUTPUT_FORMAT = 'Do MMM YYYY';
+	var INPUT_FORMAT = 'dddd D MMMM YYYY';
+	var OUTPUT_FORMAT = 'D MMM YYYY';
 
 	function update() {
 		week = $('input[name="week"]').val();
