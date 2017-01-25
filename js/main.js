@@ -8,6 +8,16 @@ $(function() {
 	function update() {
 		week = $('input[name="week"]').val();
 
+		if (parseInt(week, 10) < 4 || parseInt(week, 10) > 42) {
+			$('input[name="week"]')
+				.css('border-color', 'red')
+				.css('background-color', '#fcc');
+		} else {
+			$('input[name="week"]')
+				.css('border-color', '')
+				.css('background-color', '');
+		}
+
 		var dates = loadDates();
 
 		if (dates.error.length) {
