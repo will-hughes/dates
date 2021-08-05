@@ -13,7 +13,7 @@ $(function() {
 
 	$.ajax({
 		type: "GET",
-		url: "dates/2021-22.csv",
+		url: "dates/2021-22a.csv",
 		dataType: "text",
 		success: function(data) {
 			var result = Papa.parse(data);
